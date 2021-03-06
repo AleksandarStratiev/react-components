@@ -1,17 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import CommentDetail from './CommentDetail';
+import ApprovalCart from './ApprovalCart';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
+    return (
+        <div className="ui container comments">
+            <ApprovalCart>
+                <div style={{textAlign: 'center'}}>
+                    <h4>Warning!</h4>
+                    Are you sure you want to do this?
+                </div>                
+            </ApprovalCart>
+            <ApprovalCart>
+                <CommentDetail 
+                    image="https://www.seekpng.com/png/full/356-3562377_personal-user.png" 
+                    author="Sam" 
+                    date="27.01.21" 
+                    text="Nice blog post!"
+                />
+            </ApprovalCart>
+            <ApprovalCart>
+                <CommentDetail 
+                    image="https://cduk.lk/wp-content/uploads/2020/10/man-300x300-1.png" 
+                    author="Alex" 
+                    date="15.12.20" 
+                    text="I'm very happy!"
+                />
+            </ApprovalCart>
+            <ApprovalCart>
+                <CommentDetail 
+                    image="http://hotprintdesign.com/wp-content/uploads/2019/02/Sani-Sebastian.png" 
+                    author="Jane" 
+                    date="18.04.20" 
+                    text="Yaba daba du!"
+                />
+            </ApprovalCart>
+        </div>
+        
+    );
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.querySelector('#root')) 
